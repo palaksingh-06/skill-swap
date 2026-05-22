@@ -24,7 +24,7 @@ const ScheduleSession = () => {
       const token = localStorage.getItem("token");
 
       await axios.put(
-        `http://localhost:5000/api/sessions/${id}/schedule`,
+        `https://skill-swap-zkfd.onrender.com/api/sessions/${id}/schedule`,
         { date, time, mode, meetingLink, notes },
         { headers: { Authorization: `Bearer ${token}` } }
       );

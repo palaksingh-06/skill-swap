@@ -358,7 +358,7 @@ import { useParams, useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 import ReviewModal from "../components/ReviewModal";
 
-const BASE = import.meta.env.VITE_SERVER_URL || "http://localhost:5000";
+const BASE = import.meta.env.VITE_SERVER_URL || "https://skill-swap-zkfd.onrender.com";
 
 function useTheme() {
   useEffect(() => {

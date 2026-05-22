@@ -80,7 +80,7 @@ const Notifications = () => {
   const fetchNotifications = useCallback(async () => {
     try {
       if (!token) return;
-      const res = await fetch("http://localhost:5000/api/notifications", {
+      const res = await fetch("https://skill-swap-zkfd.onrender.com/api/notifications", {
         method: "GET",
         headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
       });
@@ -97,7 +97,7 @@ const Notifications = () => {
 
   const markAsRead = async (id) => {
     try {
-      await fetch(`http://localhost:5000/api/notifications/${id}/read`, {
+      await fetch(`https://skill-swap-zkfd.onrender.com/api/notifications/${id}/read`, {
         method: "PUT",
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -111,7 +111,7 @@ const Notifications = () => {
 
   const markAllAsRead = async () => {
     try {
-      await fetch("http://localhost:5000/api/notifications/read-all", {
+      await fetch("https://skill-swap-zkfd.onrender.com/api/notifications/read-all", {
         method: "PUT",
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -123,7 +123,7 @@ const Notifications = () => {
 
   const deleteNotification = async (id) => {
     try {
-      await fetch(`http://localhost:5000/api/notifications/${id}`, {
+      await fetch(`https://skill-swap-zkfd.onrender.com/api/notifications/${id}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },
       });

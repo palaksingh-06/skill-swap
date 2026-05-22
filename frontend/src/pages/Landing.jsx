@@ -1134,7 +1134,7 @@ const Landing = () => {
         if (!token) return;
 
         const { data } = await axios.get(
-          "http://localhost:5000/api/leaderboard",
+          "https://skill-swap-zkfd.onrender.com/api/leaderboard",
           {
             headers: { Authorization: `Bearer ${token}` },
           }

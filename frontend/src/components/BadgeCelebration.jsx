@@ -691,7 +691,7 @@ const BadgeCelebration = () => {
     const checkUnseen = async () => {
       try {
         const token = localStorage.getItem("token");
-        const res = await axios.get("http://localhost:5000/api/user/badges/unseen", {
+        const res = await axios.get("https://skill-swap-zkfd.onrender.com/api/user/badges/unseen", {
           headers: { Authorization: `Bearer ${token}` },
         });
         const unseen = res.data.badges || [];
@@ -740,7 +740,7 @@ const BadgeCelebration = () => {
       try {
         const token = localStorage.getItem("token");
         await axios.post(
-          "http://localhost:5000/api/user/badges/mark-seen",
+          "https://skill-swap-zkfd.onrender.com/api/user/badges/mark-seen",
           { badgeId: current?.id },
           { headers: { Authorization: `Bearer ${token}` } }
         );

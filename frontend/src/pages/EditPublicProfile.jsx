@@ -651,7 +651,7 @@ const PublicProfile = () => {
     try {
       const token = localStorage.getItem("token");
       const res = await axios.put(
-        "http://localhost:5000/api/user/public-profile",
+        "https://skill-swap-zkfd.onrender.com/api/user/public-profile",
         {
           username,
           skillLevel,

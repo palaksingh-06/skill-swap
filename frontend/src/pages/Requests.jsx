@@ -35,7 +35,7 @@ const Requests = () => {
       if (!token) return setLoading(false);
 
       const res = await axios.get(
-        "http://localhost:5000/api/requests/incoming",
+        "https://skill-swap-zkfd.onrender.com/api/requests/incoming",
         { headers: { Authorization: `Bearer ${token}` } }
       );
       setRequests(res.data);
@@ -50,7 +50,7 @@ const Requests = () => {
     try {
       const token = localStorage.getItem("token");
       await axios.put(
-        `http://localhost:5000/api/requests/${id}/status`,
+        `https://skill-swap-zkfd.onrender.com/api/requests/${id}/status`,
         { status },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -64,7 +64,7 @@ const Requests = () => {
     try {
       const token = localStorage.getItem("token");
       await axios.post(
-        "http://localhost:5000/api/sessions/create-from-request",
+        "https://skill-swap-zkfd.onrender.com/api/sessions/create-from-request",
         { requestId },
         { headers: { Authorization: `Bearer ${token}` } }
       );

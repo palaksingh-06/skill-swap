@@ -30,7 +30,7 @@ const Messages = () => {
       if (!token) return;
 
       const res = await axios.get(
-        `http://localhost:5000/api/messages/${id}`,
+        `https://skill-swap-zkfd.onrender.com/api/messages/${id}`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -55,7 +55,7 @@ const Messages = () => {
       const token = localStorage.getItem("token");
 
       const res = await axios.post(
-        "http://localhost:5000/api/messages/send",
+        "https://skill-swap-zkfd.onrender.com/api/messages/send",
         {
           receiverId: id,
           text: newMessage.trim(),

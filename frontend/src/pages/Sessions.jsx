@@ -33,7 +33,7 @@ const Sessions = () => {
   const fetchSessions = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await axios.get("http://localhost:5000/api/sessions/my", {
+      const res = await axios.get("https://skill-swap-zkfd.onrender.com/api/sessions/my", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setSessions(res.data);
@@ -56,7 +56,7 @@ const Sessions = () => {
     if (!window.confirm("Are you sure you want to delete this session?")) return;
     try {
       const token = localStorage.getItem("token");
-      await axios.delete(`http://localhost:5000/api/sessions/${id}`, {
+      await axios.delete(`https://skill-swap-zkfd.onrender.com/api/sessions/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setSessions((prev) => prev.filter((s) => s._id !== id));

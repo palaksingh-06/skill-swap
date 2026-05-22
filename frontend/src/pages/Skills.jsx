@@ -29,7 +29,7 @@ const Skills = () => {
       const token = localStorage.getItem("token");
 
       const res = await axios.put(
-        "http://localhost:5000/api/user/remove-skill",
+        "https://skill-swap-zkfd.onrender.com/api/user/remove-skill",
         { type, skillId },
         { headers: { Authorization: `Bearer ${token}` } }
       );

@@ -64,7 +64,7 @@ const SkillBuddy = () => {
     const loadHistory = async () => {
       try {
         const token = localStorage.getItem("token");
-        const res = await axios.get("http://localhost:5000/api/ai/history", {
+        const res = await axios.get("https://skill-swap-zkfd.onrender.com/api/ai/history", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setHiddenHistory(res.data.map((m) => ({ role: m.role, text: m.text })));
@@ -98,7 +98,7 @@ const SkillBuddy = () => {
         .slice(-10)
         .map((c) => ({ role: c.role, text: c.text }));
       const res = await axios.post(
-        "http://localhost:5000/api/ai/chat",
+        "https://skill-swap-zkfd.onrender.com/api/ai/chat",
         { message: userMsg.text, history },
         { headers: { Authorization: `Bearer ${token}` } }
       );

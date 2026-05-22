@@ -205,7 +205,7 @@ const SkillMatch = () => {
     if (!user) return;
     const fetchMatches = async () => {
       const res = await axios.get(
-        `http://localhost:5000/api/match/skill-match/${user._id}`
+        `https://skill-swap-zkfd.onrender.com/api/match/skill-match/${user._id}`
       );
       setMatches(res.data);
     };

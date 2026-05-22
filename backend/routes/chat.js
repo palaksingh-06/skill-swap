@@ -19,7 +19,7 @@ const upload = multer({ storage });
 /* 🎤 Upload voice */
 router.post("/upload-voice", upload.single("file"), (req, res) => {
   try {
-    const fileUrl = `http://localhost:5000/uploads/${req.file.filename}`;
+    const fileUrl = `https://skill-swap-zkfd.onrender.com/uploads/${req.file.filename}`;
 
     res.json({ url: fileUrl });
   } catch (err) {

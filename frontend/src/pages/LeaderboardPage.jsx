@@ -17,7 +17,7 @@ const LeaderboardPage = () => {
     const fetchLeaderboard = async () => {
       try {
         const token = localStorage.getItem("token");
-        const { data } = await axios.get("http://localhost:5000/api/leaderboard", {
+        const { data } = await axios.get("https://skill-swap-zkfd.onrender.com/api/leaderboard", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setLeaderboard(data);

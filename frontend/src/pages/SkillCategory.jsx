@@ -39,7 +39,7 @@ export default function SkillCategory() {
     try {
       setLoading(true);
       const res = await axios.get(
-        `http://localhost:5000/api/users/by-skill?skill=${category}`
+        `https://skill-swap-zkfd.onrender.com/api/users/by-skill?skill=${category}`
       );
       setUsers(res.data);
     } catch (err) {
@@ -52,7 +52,7 @@ export default function SkillCategory() {
 
   const sendRequest = async (id) => {
     try {
-      await axios.post("http://localhost:5000/api/requests/send", {
+      await axios.post("https://skill-swap-zkfd.onrender.com/api/requests/send", {
         receiverId: id,
       });
       alert("Request sent successfully!");

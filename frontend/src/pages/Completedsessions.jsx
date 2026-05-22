@@ -23,7 +23,7 @@ const CompletedSessions = () => {
     try {
       setLoading(true);
       const token = localStorage.getItem("token");
-      const res = await axios.get("http://localhost:5000/api/sessions/completed", {
+      const res = await axios.get("https://skill-swap-zkfd.onrender.com/api/sessions/completed", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setSessions(res.data.sessions || res.data || []);
@@ -43,7 +43,7 @@ const CompletedSessions = () => {
       sessionList.map(async (s) => {
         try {
           const res = await axios.get(
-            `http://localhost:5000/api/reviews/session/${s._id}`,
+            `https://skill-swap-zkfd.onrender.com/api/reviews/session/${s._id}`,
             { headers: { Authorization: `Bearer ${token}` } }
           );
           if (res.data.hasReviewed) reviewed.add(s._id);

@@ -184,7 +184,7 @@ const PublicProfile = () => {
 
   useEffect(() => {
     setLoading(true);
-    axios.get(`http://localhost:5000/api/user/public/profile/${id}`)
+    axios.get(`https://skill-swap-zkfd.onrender.com/api/user/public/profile/${id}`)
       .then(res => {
         const u = res.data.user || res.data;
         setProfileUser(u);
@@ -198,7 +198,7 @@ const PublicProfile = () => {
     try {
       const token = localStorage.getItem("token");
       if (!token) return alert("Please login first");
-      await axios.post("http://localhost:5000/api/requests/send",
+      await axios.post("https://skill-swap-zkfd.onrender.com/api/requests/send",
         { toUser: profileUser._id, skill },
         { headers: { Authorization: `Bearer ${token}` } }
       );

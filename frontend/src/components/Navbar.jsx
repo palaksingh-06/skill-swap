@@ -776,7 +776,7 @@ import logodark from "../assets/logodark.png";
 import { useNotifications } from "../context/NotificationContext";
 import { FiSettings, FiBell } from "react-icons/fi";
 
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000"; // ✅
+const API_URL = import.meta.env.VITE_API_URL || "https://skill-swap-zkfd.onrender.com"; // ✅
 
 const Navbar = () => {
   const { user, logout } = useContext(AuthContext);

@@ -77,7 +77,7 @@ const App = () => {
   }
 
   return (
-    // ✅ Use DaisyUI semantic classes instead of hardcoded colors
+  
     <div className="bg-base-100 text-base-content min-h-screen">
 
       <BadgeCelebration />

@@ -641,7 +641,7 @@ const EditProfile = () => {
       ];
 
       const res = await axios.put(
-        "http://localhost:5000/api/user/update",
+        "https://skill-swap-zkfd.onrender.com/api/user/update",
         {
           name,
           skillsTeach: mergedTeach,

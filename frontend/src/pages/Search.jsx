@@ -20,7 +20,7 @@ const Search = () => {
   /* ---------------- FETCH DATA ---------------- */
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/user/skills/all")
+      .get("https://skill-swap-zkfd.onrender.com/api/user/skills/all")
       .then((res) => {
         setSkillsData(res.data.skills || []);
       })

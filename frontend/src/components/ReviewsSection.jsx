@@ -16,7 +16,7 @@ const ReviewsSection = ({ userId }) => {
     const fetchReviews = async () => {
       try {
         const res = await fetch(
-          `http://localhost:5000/api/reviews/user/${userId}`
+          `https://skill-swap-zkfd.onrender.com/api/reviews/user/${userId}`
         );
         const data = await res.json();
 

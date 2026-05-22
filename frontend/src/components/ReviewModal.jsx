@@ -25,7 +25,7 @@ const ReviewModal = ({ session, onClose, onSubmitted }) => {
     try {
       const token = localStorage.getItem("token");
 
-      const res = await fetch("http://localhost:5000/api/reviews", {
+      const res = await fetch("https://skill-swap-zkfd.onrender.com/api/reviews", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

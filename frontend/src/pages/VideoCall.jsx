@@ -1463,7 +1463,7 @@ function VideoCallInner({ onLeave, onEndCall, userName, roomId }) {
   const socketRef = useRef(null);
 
   useEffect(() => {
-    const socket = io(import.meta.env.VITE_SOCKET_URL || "http://localhost:5000", { reconnection: true });
+    const socket = io(import.meta.env.VITE_SOCKET_URL || "https://skill-swap-zkfd.onrender.com", { reconnection: true });
     socketRef.current = socket;
 
     socket.on("connect", () => { socket.emit("join-room", roomId); });
@@ -1545,7 +1545,7 @@ function VideoCallInner({ onLeave, onEndCall, userName, roomId }) {
 
 // ─── Root ─────────────────────────────────────────────────
 function VideoCall() {
-  const BASE = import.meta.env.VITE_SERVER_URL || "http://localhost:5000";
+  const BASE = import.meta.env.VITE_SERVER_URL || "https://skill-swap-zkfd.onrender.com";
 
   const { roomId } = useParams();
   const navigate   = useNavigate();

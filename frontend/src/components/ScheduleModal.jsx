@@ -19,7 +19,7 @@ const ScheduleModal = ({ session, closeModal, refreshSessions }) => {
     const token = localStorage.getItem("token");
 
     await axios.put(
-      `http://localhost:5000/api/sessions/${session._id}/schedule`,
+      `https://skill-swap-zkfd.onrender.com/api/sessions/${session._id}/schedule`,
       {
         date,
         time,

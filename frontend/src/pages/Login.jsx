@@ -6,7 +6,7 @@ import { DarkModeContext } from "../context/DarkModeContext";
 
 const Login = () => {
   const handleGoogleLogin = () => {
-    window.location.href = "http://localhost:5000/api/auth/google";
+    window.location.href = "https://skill-swap-zkfd.onrender.com/api/auth/google";
   };
 
   const navigate = useNavigate();
@@ -23,7 +23,7 @@ const Login = () => {
     setLoading(true);
 
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/login", form);
+      const res = await axios.post("https://skill-swap-zkfd.onrender.com/api/auth/login", form);
 
       login(res.data.token);
       localStorage.setItem("user", JSON.stringify(res.data.user));

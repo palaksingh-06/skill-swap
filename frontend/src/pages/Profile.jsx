@@ -408,7 +408,7 @@ const Profile = () => {
       const formData = new FormData();
       formData.append("avatar", file);
       const token = localStorage.getItem("token");
-      const res = await axios.post("http://localhost:5000/api/user/upload-avatar", formData, {
+      const res = await axios.post("https://skill-swap-zkfd.onrender.com/api/user/upload-avatar", formData, {
         headers: { Authorization: `Bearer ${token}`, "Content-Type": "multipart/form-data" },
       });
       setUser((prev) => ({ ...prev, avatar: res.data.avatar }));

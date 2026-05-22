@@ -36,10 +36,10 @@ const PostCallReview = () => {
 
         // Get session details
         const [sessRes, reviewRes] = await Promise.all([
-          axios.get(`http://localhost:5000/api/sessions/completed`, {
+          axios.get(`https://skill-swap-zkfd.onrender.com/api/sessions/completed`, {
             headers: { Authorization: `Bearer ${token}` },
           }),
-          axios.get(`http://localhost:5000/api/reviews/session/${sessionId}`, {
+          axios.get(`https://skill-swap-zkfd.onrender.com/api/reviews/session/${sessionId}`, {
             headers: { Authorization: `Bearer ${token}` },
           }),
         ]);
@@ -92,7 +92,7 @@ const PostCallReview = () => {
       const reviewType = session?.role === "teacher" ? "learner" : "teacher";
 
       await axios.post(
-        "http://localhost:5000/api/reviews",
+        "https://skill-swap-zkfd.onrender.com/api/reviews",
         { sessionId, rating, comment, reviewType },
         { headers: { Authorization: `Bearer ${token}` } }
       );

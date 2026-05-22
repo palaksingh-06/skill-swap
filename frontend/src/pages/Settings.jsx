@@ -300,7 +300,7 @@ const Settings = () => {
     }
 
     axios
-      .get("http://localhost:5000/api/user/me", {
+      .get("https://skill-swap-zkfd.onrender.com/api/user/me", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {
@@ -338,7 +338,7 @@ const handleSave = async (field, value) => {
 
     // 🔐 Password change
     if (field === "password") {
-      url = "http://localhost:5000/api/auth/change-password";
+      url = "https://skill-swap-zkfd.onrender.com/api/auth/change-password";
       payload = {
         oldPassword: value.oldPassword,
         newPassword: value.newPassword,
@@ -347,7 +347,7 @@ const handleSave = async (field, value) => {
     
     // 👤 All other updates
     else {
-      url = "http://localhost:5000/api/user/update";
+      url = "https://skill-swap-zkfd.onrender.com/api/user/update";
       payload = { [field]: value };
     }
 
@@ -360,7 +360,7 @@ const handleSave = async (field, value) => {
 
     // 🔥 REFETCH UPDATED USER (THIS WAS MISSING)
     const userRes = await axios.get(
-      "http://localhost:5000/api/user/me",
+      "https://skill-swap-zkfd.onrender.com/api/user/me",
       {
         headers: {
           Authorization: `Bearer ${token}`,

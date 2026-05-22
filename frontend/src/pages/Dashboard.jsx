@@ -36,8 +36,8 @@ const Dashboard = () => {
     try {
       const token = localStorage.getItem("token");
       const [statsRes, profileRes] = await Promise.all([
-        axios.get("http://localhost:5000/api/dashboard/stats", { headers: { Authorization: `Bearer ${token}` } }),
-        axios.get("http://localhost:5000/api/user/me",          { headers: { Authorization: `Bearer ${token}` } }),
+        axios.get("https://skill-swap-zkfd.onrender.com/api/dashboard/stats", { headers: { Authorization: `Bearer ${token}` } }),
+        axios.get("https://skill-swap-zkfd.onrender.com/api/user/me",          { headers: { Authorization: `Bearer ${token}` } }),
       ]);
       setStats(statsRes.data);
       setXpData({ xp: profileRes.data.user?.xp || 0, badges: profileRes.data.user?.badges || [] });

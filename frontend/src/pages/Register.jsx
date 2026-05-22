@@ -5,7 +5,7 @@ import { DarkModeContext } from "../context/DarkModeContext";
 
 const Register = () => {
   const handleGoogleLogin = () => {
-    window.location.href = "http://localhost:5000/api/auth/google";
+    window.location.href = "https://skill-swap-zkfd.onrender.com/api/auth/google";
   };
 
   const navigate = useNavigate();
@@ -185,7 +185,7 @@ const Register = () => {
 
     setLoading(true);
     try {
-      const { data } = await axios.post("http://localhost:5000/api/auth/register", form);
+      const { data } = await axios.post("https://skill-swap-zkfd.onrender.com/api/auth/register", form);
 
       // ✅ Save token + user so isLoggedIn works across the app
       if (data.token) localStorage.setItem("token", data.token);

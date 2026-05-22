@@ -10,7 +10,7 @@ const ForgotPassword = () => {
 
   const sendOtp = async () => {
   try {
-    const res = await axios.post("http://localhost:5000/api/auth/send-otp", { email });
+    const res = await axios.post("https://skill-swap-zkfd.onrender.com/api/auth/send-otp", { email });
     setMsg(res.data.message || "OTP sent successfully");
     setStep(2);
   } catch (err) {
@@ -20,7 +20,7 @@ const ForgotPassword = () => {
 
   const resetPassword = async () => {
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/reset-password", {
+      const res = await axios.post("https://skill-swap-zkfd.onrender.com/api/auth/reset-password", {
         email,
         otp,
         newPassword,

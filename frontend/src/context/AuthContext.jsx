@@ -18,7 +18,7 @@ const AuthProvider = ({ children }) => {
     }
 
     axios
-      .get("http://localhost:5000/api/user/me", {
+      .get("https://skill-swap-zkfd.onrender.com/api/user/me", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => setUser(res.data.user))
@@ -34,7 +34,7 @@ const AuthProvider = ({ children }) => {
     localStorage.setItem("token", token);
     setLoading(true);
     try {
-      const res = await axios.get("http://localhost:5000/api/user/me", {
+      const res = await axios.get("https://skill-swap-zkfd.onrender.com/api/user/me", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setUser(res.data.user); // ✅ update user context

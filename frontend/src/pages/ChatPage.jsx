@@ -892,11 +892,11 @@ const ChatPage = () => {
 
         // Fetch Stream token + target user profile in parallel
         const [tokenRes, profileRes] = await Promise.all([
-          axios.get("http://localhost:5000/api/chat/token", {
+          axios.get("https://skill-swap-zkfd.onrender.com/api/chat/token", {
             headers: { Authorization: `Bearer ${token}` },
           }),
           axios.get(
-            `http://localhost:5000/api/user/public/profile/${targetUserId}`,
+            `https://skill-swap-zkfd.onrender.com/api/user/public/profile/${targetUserId}`,
             { headers: { Authorization: `Bearer ${token}` } }
           ),
         ]);
@@ -908,7 +908,7 @@ const ChatPage = () => {
 
         // Ensure target user exists in Stream
         await axios.post(
-          `http://localhost:5000/api/chat/upsert-user/${targetUserId}`,
+          `https://skill-swap-zkfd.onrender.com/api/chat/upsert-user/${targetUserId}`,
           {},
           { headers: { Authorization: `Bearer ${token}` } }
         );
