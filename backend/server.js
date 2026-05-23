@@ -44,7 +44,7 @@ io.on("connection", (socket) => {
     socket.join(userId);
   });
 
-  // ── ✅ Chat message notification ──────────────
+  // ──  Chat message notification ──────────────
   socket.on("notify_message", async ({ senderId, senderName, receiverId }) => {
     try {
       // Save notification to DB
@@ -126,6 +126,7 @@ app.use(
   })
 );
 app.use(express.json());
+app.use("/uploads", express.static("uploads"));
 app.use(passport.initialize());
 
 // ------------------ DATABASE ------------------

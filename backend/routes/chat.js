@@ -16,7 +16,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-/* 🎤 Upload voice */
+/*  Upload voice */
 router.post("/upload-voice", upload.single("file"), (req, res) => {
   try {
     const fileUrl = `https://skill-swap-zkfd.onrender.com/uploads/${req.file.filename}`;

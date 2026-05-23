@@ -1,4 +1,4 @@
-// controllers/dashboardController.js
+
 const Session = require("../models/Session");
 const Request = require("../models/Request");
 

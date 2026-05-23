@@ -1,4 +1,3 @@
-// controllers/leaderboardController.js
 const User = require("../models/User");
 
 const getLeaderboard = async (req, res) => {

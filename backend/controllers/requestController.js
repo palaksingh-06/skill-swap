@@ -40,7 +40,7 @@ exports.sendRequest = async (req, res) => {
       read: false
     });
 
-    // ✅ Emit realtime toast — event name must match frontend listener
+    // Emit realtime toast — event name must match frontend listener
     global.io.to(String(toUser)).emit("new_notification", {
       _id:       notification._id,
       message:   notification.message,
@@ -74,7 +74,7 @@ exports.updateRequestStatus = async (req, res) => {
       { new: true }
     );
 
-    // ✅ Notify for ACCEPTED
+    //  Notify for ACCEPTED
     if (status === "accepted") {
       const notification = await Notification.create({
         user:    request.fromUser,
@@ -91,7 +91,7 @@ exports.updateRequestStatus = async (req, res) => {
       });
     }
 
-    // ✅ Notify for REJECTED (was missing before)
+    //  Notify for REJECTED (was missing before)
     if (status === "rejected") {
       const notification = await Notification.create({
         user:    request.fromUser,

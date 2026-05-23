@@ -19,7 +19,7 @@ module.exports = async function (req, res, next) {
       return res.status(401).json({ msg: "User not found" });
     }
 
-    req.user = user; // 🔥 THIS LINE FIXES EVERYTHING
+    req.user = user; //  THIS LINE FIXES EVERYTHING
     next();
   } catch (err) {
     console.log("AUTH ERROR:", err.message);

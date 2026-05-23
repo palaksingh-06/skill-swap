@@ -220,12 +220,8 @@ exports.updatePublicProfile = async (req, res) => {
     res.status(500).json({ msg: "Failed to update public profile" });
   }
 };
-/* ------------------------------------
-   GET ALL SKILLS
------------------------------------- */
-/* ------------------------------------
-   GET ALL SKILLS
------------------------------------- */
+
+   
 exports.getAllSkills = async (req, res) => {
   try {
     const users = await User.find()
@@ -352,7 +348,7 @@ exports.uploadAvatar = async (req, res) => {
 };
 
 /* ------------------------------------
-   GET UNSEEN BADGES  ✅ NEW
+   GET UNSEEN BADGES   NEW
    GET /api/user/badges/unseen
    Returns badges earned but not yet celebrated
 ------------------------------------ */
@@ -374,7 +370,7 @@ exports.getUnseenBadges = async (req, res) => {
 };
 
 /* ------------------------------------
-   MARK BADGE SEEN  ✅ NEW
+   MARK BADGE SEEN   NEW
    POST /api/user/badges/mark-seen
    Body: { badgeId: "first_session" }
    Prevents the same celebration firing twice

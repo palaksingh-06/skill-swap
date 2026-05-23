@@ -10,7 +10,7 @@ router.post("/stream", async (req, res) => {
 
   if (event?.type !== "call.recording_ready") return;
 
-  // ✅ call_cid is "default:22938dc9-..." so split on ":" to get the ID
+  //  call_cid is "default:22938dc9-..." so split on ":" to get the ID
   const roomId       = event?.call_cid?.split(":")?.[1];
   const recordingUrl = event?.call_recording?.url;
   const duration     = event?.call_recording?.duration;
