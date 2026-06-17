@@ -127,6 +127,9 @@ exports.forgotPassword = async (req, res) => {
         pass: process.env.EMAIL_PASS,
       },
     });
+    console.log("Trying SMTP connection...");
+await transporter.verify();
+console.log("SMTP works");
 
     await transporter.sendMail({
       to: email,
