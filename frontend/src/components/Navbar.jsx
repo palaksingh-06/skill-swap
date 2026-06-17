@@ -1,9 +1,3 @@
-
-
-
-
-
-
 import { IoNotificationsOutline } from "react-icons/io5";
 import { HiOutlineCog6Tooth } from "react-icons/hi2";
 import { Link, useNavigate } from "react-router-dom";
@@ -17,6 +11,7 @@ import logolight from "../assets/logolight.png";
 import logodark from "../assets/logodark.png";
 import { useNotifications } from "../context/NotificationContext";
 import { FiSettings, FiBell } from "react-icons/fi";
+import {HiMenu,HiX} from "react-icons/hi";
 
 const API_URL = import.meta.env.VITE_API_URL || "https://skill-swap-zkfd.onrender.com"; // ✅
 
@@ -29,6 +24,7 @@ const Navbar = () => {
   const [notifications, setNotifications] = useState([]);
   const [showChat, setShowChat] = useState(false);
   const [showNotifications, setShowNotifications] = useState(false);
+  const [mobileMenu,setMobileMenu]=useState(false);
 
   const token = localStorage.getItem("token");
 
@@ -63,6 +59,21 @@ const Navbar = () => {
     };
   }, [user, token]);
 
+
+  useEffect(() => {
+  const handleResize = () => {
+    if (window.innerWidth >= 768) {
+      setMobileMenu(false);
+    }
+  };
+
+  window.addEventListener("resize", handleResize);
+
+  return () => {
+    window.removeEventListener("resize", handleResize);
+  };
+}, []);
+
   /* ---------------- MARK AS READ ---------------- */
   const markAsRead = async (id) => {
     try {
@@ -86,10 +97,12 @@ const Navbar = () => {
     }
   };
 
+
+
   return (
     <>
       <nav
-        className={`w-full px-10 py-4 flex items-center justify-between shadow-md transition-colors ${
+        className={`w-full px-4 md:px-10 py-4 flex items-center justify-between shadow-md transition-colors ${
           darkMode ? "bg-slate-900 text-white" : "bg-white text-gray-800"
         }`}
       >
@@ -101,16 +114,20 @@ const Navbar = () => {
     className="w-10 h-10 object-contain"
   />
 
-<span className="text-2xl font-extrabold tracking-wide">
+<span className="text-xl md:text-2xl font-extrabold tracking-wide">
   <span className="text-teal-500">Skill</span>
   <span className={darkMode ? "text-white" : "text-black"}>
     Swap
   </span>
 </span>
 </Link>
+<button onClick={()=>setMobileMenu(!mobileMenu)}
+  className="md:hidden text-2xl">
+{mobileMenu ? <HiX/> :<HiMenu/>}
+</button>
 
         {/* RIGHT SIDE */}
-        <div className="flex items-center gap-6 text-sm font-semibold relative">
+        <div className="hidden md:flex items-center gap-6 text-sm font-semibold relative">
 
           {/* DARK MODE TOGGLE */}
           <button onClick={toggleDarkMode} className="w-8 h-8 rounded-full overflow-hidden">
@@ -125,6 +142,7 @@ const Navbar = () => {
           <Link to={user ? "/search" : "/login"} className="hover:text-teal-600 transition">
             Browse Skills
           </Link>
+      
 
           {/* SKILL MATCHES */}
           {user && (
@@ -240,6 +258,115 @@ const Navbar = () => {
           )}
         </div>
       </nav>
+
+      {mobileMenu && ( 
+        <div className={`md:hidden w-full px-4 pb-4 shadow-md transition-all duration-300 ${darkMode ? "bg-slate-900 text-white":"bg-white text-gray-800"}`
+       }>
+      <div className="py-3 border-b">
+       <button
+         onClick={() => {
+  toggleDarkMode();
+  setMobileMenu(false);
+}}
+           className="flex items-center gap-2"
+        >
+       <img
+           src={darkMode ? SunIcon : MoonIcon}
+            alt="Theme"
+             className="w-6 h-6"
+          />
+            Theme
+          </button>
+        </div>
+
+      <Link
+      to={user ? "/search" : "/login"}
+      onClick={() => setMobileMenu(false)}
+        className="block py-3 border-b"
+      >
+          Browse Skills
+          </Link>
+          {user && 
+            (
+          <>
+           <div className="py-3 border-b font-semibold text-teal-500">
+    Hi, {user.name}
+  </div>
+        <Link
+            to="/matches"
+            onClick={() => setMobileMenu(false)}
+              className="block py-3 border-b"
+        >
+          Skill Matches
+        </Link>
+
+        <Link
+          to="/leaderboard"
+            onClick={() => setMobileMenu(false)}
+            className="block py-3 border-b"
+        >
+           Leaderboard
+        </Link>
+
+        <Link
+          to="/profile"
+          onClick={() => setMobileMenu(false)}
+          className="block py-3 border-b"
+        >
+           Profile
+      </Link>
+
+      <Link
+        to="/settings"
+        onClick={() => setMobileMenu(false)}
+        className="block py-3 border-b"
+      >
+         Settings
+      </Link>
+
+      <Link
+        to="/notifications"
+        onClick={() => {
+          clearUnread();
+          setMobileMenu(false);
+        }}
+          className="flex justify-between py-3 border-b"
+        >
+        Notifications
+
+      {unreadCount > 0 && (
+      <span className="min-w-[24px] text-center bg-teal-500 text-white px-2 rounded-full text-xs">
+      {unreadCount}
+        </span>
+        )}
+        </Link>
+
+      <button
+      onClick={() => {
+        logout();
+        navigate("/");
+        setMobileMenu(false);
+        }}
+      className="w-full mt-4 px-4 py-2 rounded-xl border border-teal-500 text-teal-500"
+      >
+        Logout
+      </button>
+        </>
+      )}
+
+    {!user && (
+        <Link
+        to="/login"
+        onClick={() => setMobileMenu(false)}
+        className="block py-3"
+      >
+          Login
+        </Link>
+      )}
+      </div>
+    )}
+  
+
 
       {/* AI CHAT WINDOW */}
       {showChat && (
