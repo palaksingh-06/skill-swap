@@ -31,7 +31,10 @@ router.get("/me", authMiddleware, async (req, res) => {
 });
 router.put("/change-password", authMiddleware, changePassword);
 
-
+router.get(
+  "/google",
+  passport.authenticate("google", { scope: ["profile", "email"] })
+);
 router.get(
   "/google/callback",
   passport.authenticate("google", {
