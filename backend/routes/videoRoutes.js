@@ -91,7 +91,7 @@
 
 // module.exports = router;
 // module.exports = router;
-process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+
 const express = require("express");
 const router = express.Router();
 const { StreamClient } = require("@stream-io/node-sdk");
