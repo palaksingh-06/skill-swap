@@ -31,21 +31,31 @@ router.get("/me", authMiddleware, async (req, res) => {
 });
 router.put("/change-password", authMiddleware, changePassword);
 
-// manshi
-router.get("/google",
-  passport.authenticate("google", { scope: ["profile", "email"] })
-);
 
-router.get("/google/callback",
-  passport.authenticate("google", { session: false }),
+router.get(
+  "/google/callback",
+  passport.authenticate("google", {
+    session: false,
+    failureRedirect: "/google-failed"
+  }),
   (req, res) => {
+    console.log("AUTH SUCCESS");
+    console.log(req.user);
+
     const token = jwt.sign(
       { id: req.user._id },
       process.env.JWT_SECRET,
       { expiresIn: "7d" }
     );
 
-    res.redirect(`https://skill-swap-1-4w1n.onrender.com/login-success?token=${token}`);
+    res.redirect(
+      `https://skill-swap-1-4w1n.onrender.com/login-success?token=${token}`
+    );
   }
 );
+
+router.get("/google-failed", (req, res) => {
+  console.log("GOOGLE AUTH FAILED");
+  res.send("Google Auth Failed");
+});
 module.exports = router;

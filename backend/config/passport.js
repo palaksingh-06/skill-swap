@@ -10,6 +10,8 @@ passport.use(
       callbackURL: process.env.GOOGLE_CALLBACK_URL,
     },
     async (accessToken, refreshToken, profile, done) => {
+        console.log("GOOGLE CALLBACK HIT");
+
       try {
         const email = profile.emails[0].value;
 
