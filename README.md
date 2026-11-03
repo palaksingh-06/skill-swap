@@ -51,43 +51,43 @@ It also includes **Skill Buddy**, an AI learning assistant that answers question
 
 ### 1. Landing Page
 
-![Landing page](docs/screenshots/01-landing.png)
+![Landing page](screenshots/landing.png)
 
 *Hero section, featured skill swaps and call to action.*
 
 ### 2. Dashboard
 
-![Dashboard](docs/screenshots/02-dashboard.png)
+![Dashboard](screenshots/dashboard.png)
 
 *Overview of upcoming sessions, XP, level progress and activity.*
 
 ### 3. Skill Discovery and Matching
 
-![Skill discovery and matches](docs/screenshots/03-skill-matching.png)
+![Skill discovery and matches](screenshots/skillMatch.png)
 
 *Browse skills by category, search users, and see mutual teach/learn matches.*
 
 ### 4. Profile and Public Profile
 
-![Profile](docs/screenshots/04-profile.png)
+![Profile](screenshots/profile.png)
 
 *Skills to teach and learn, reviews, badges and public mentor profile.*
 
-### 5. Video Session
+### 5.  Browse Skills
 
-![Video call](docs/screenshots/05-video-call.png)
+![Video call](screenshots/browseSkills.png)
 
-*In-app video call with chat, reactions and session recording.*
+*Browse skills by mentor name or skills teaches.*
 
-### 6. Skill Buddy (AI Assistant)
+### 6. Notification 
 
-![Skill Buddy chatbot](docs/screenshots/06-skill-buddy.png)
+![Notification](screenshots/Notification.png)
 
-*AI chatbot that answers learning questions and recommends real mentors.*
+*Get real time notification for the activity .*
 
 ### 7. Badges and Leaderboard
 
-![Badges and leaderboard](docs/screenshots/07-badges-leaderboard.png)
+![Badges and leaderboard](screenshots/leaderboard.png)
 
 *Gamification: earn badges, gain XP, level up and climb the leaderboard.*
 
