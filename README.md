@@ -327,8 +327,8 @@ The backend and frontend are deployed as two separate Render services. A few thi
 **Palak**
 4th-year B.Tech Computer Science student, Banasthali Vidyapith
 
-- GitHub: [@your-username](https://github.com/your-username)
-- LinkedIn: [your-profile](https://www.linkedin.com/in/your-profile)
+- GitHub: [@palaksingh-06](https://github.com/palaksingh-06)
+- LinkedIn: [Palak Singh](https://www.linkedin.com/in/palak-singh-255391285/)
 
 ---
 
