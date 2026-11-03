@@ -51,6 +51,9 @@ It also includes **Skill Buddy**, an AI learning assistant that answers question
 
 ### 1. Landing Page
 
+![Landing page](screenshots/home.png)
+![Landing page](screenshots/home1.png)
+![Landing page](screenshots/home2.png)
 ![Landing page](screenshots/landing.png)
 
 *Hero section, featured skill swaps and call to action.*
@@ -82,6 +85,7 @@ It also includes **Skill Buddy**, an AI learning assistant that answers question
 ### 6. Notification 
 
 ![Notification](screenshots/Notification.png)
+![Notification](screenshots/settings.png)
 
 *Get real time notification for the activity .*
 
@@ -90,33 +94,6 @@ It also includes **Skill Buddy**, an AI learning assistant that answers question
 ![Badges and leaderboard](screenshots/leaderboard.png)
 
 *Gamification: earn badges, gain XP, level up and climb the leaderboard.*
-
-<details>
-<summary><b>Optional: compact two-column gallery layout</b></summary>
-
-<br>
-
-If you would rather show smaller thumbnails side by side, replace the sections above with this:
-
-<table>
-  <tr>
-    <td align="center"><img src="docs/screenshots/01-landing.png" width="400"><br><sub>Landing</sub></td>
-    <td align="center"><img src="docs/screenshots/02-dashboard.png" width="400"><br><sub>Dashboard</sub></td>
-  </tr>
-  <tr>
-    <td align="center"><img src="docs/screenshots/03-skill-matching.png" width="400"><br><sub>Skill Matching</sub></td>
-    <td align="center"><img src="docs/screenshots/04-profile.png" width="400"><br><sub>Profile</sub></td>
-  </tr>
-  <tr>
-    <td align="center"><img src="docs/screenshots/05-video-call.png" width="400"><br><sub>Video Session</sub></td>
-    <td align="center"><img src="docs/screenshots/06-skill-buddy.png" width="400"><br><sub>Skill Buddy</sub></td>
-  </tr>
-  <tr>
-    <td align="center" colspan="2"><img src="docs/screenshots/07-badges-leaderboard.png" width="400"><br><sub>Badges and Leaderboard</sub></td>
-  </tr>
-</table>
-
-</details>
 
 ---
 
