@@ -1,4 +1,4 @@
-<div align="center">
+ <div align="center">
 
 # SkillSwap
 
@@ -46,7 +46,7 @@ It also includes **Skill Buddy**, an AI learning assistant that answers question
 
 ## Screenshots
 
-> Add your images to `docs/screenshots/` using the file names below, and they will show up here automatically.
+> Add your images to the `screenshots/` directory using the file names below, and they will show up here automatically.
 > Tip: use a consistent browser width (about 1440px) and PNG or WebP files under 500 KB each.
 
 ### 1. Landing Page
@@ -76,18 +76,18 @@ It also includes **Skill Buddy**, an AI learning assistant that answers question
 
 *Skills to teach and learn, reviews, badges and public mentor profile.*
 
-### 5.  Browse Skills
+### 5. Browse Skills
 
 ![Video call](screenshots/browseSkills.png)
 
 *Browse skills by mentor name or skills teaches.*
 
-### 6. Notification 
+### 6. Notification
 
 ![Notification](screenshots/Notification.png)
 ![Notification](screenshots/settings.png)
 
-*Get real time notification for the activity .*
+*Get real time notification for the activity.*
 
 ### 7. Badges and Leaderboard
 
@@ -231,7 +231,7 @@ All routes are prefixed with `/api`. Protected routes require an `Authorization:
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/<your-username>/skill-swap.git
+git clone https://github.com/palaksingh-06/skill-swap.git
 cd skill-swap
 ```
 
@@ -240,7 +240,13 @@ cd skill-swap
 ```bash
 cd backend
 npm install
-cp .env.example .env
+```
+
+Create a `.env` file manually inside the `backend` directory and add the environment variables listed in the [Environment Variables](#environment-variables) section.
+
+Then start the backend:
+
+```bash
 npm run dev
 ```
 
@@ -248,10 +254,18 @@ The API starts on `http://localhost:5000`.
 
 ### 3. Set up the frontend
 
+Open a new terminal from the project root directory, then run:
+
 ```bash
 cd frontend
 npm install
-cp .env.example .env
+```
+
+Create a `.env` file manually inside the `frontend` directory and add the environment variables listed in the [Environment Variables](#environment-variables) section.
+
+Then start the frontend:
+
+```bash
 npm run dev
 ```
 
@@ -294,7 +308,7 @@ VITE_SERVER_URL=http://localhost:5000
 VITE_STREAM_API_KEY=
 ```
 
-> Never commit real `.env` files. Add them to `.gitignore` and share only an `.env.example` with placeholder values.
+> **Important:** Never commit your actual `.env` files or expose API keys, passwords, database credentials, or other secrets on GitHub. Keep your environment files private and configure your own credentials locally.
 
 ---
 
@@ -324,7 +338,7 @@ The backend and frontend are deployed as two separate Render services. A few thi
 
 ## Author
 
-**Palak**
+**Palak**  
 4th-year B.Tech Computer Science student, Banasthali Vidyapith
 
 - GitHub: [@palaksingh-06](https://github.com/palaksingh-06)
