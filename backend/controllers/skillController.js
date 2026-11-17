@@ -39,9 +39,7 @@ exports.createSkill = async (req, res) => {
  */
 exports.getAllSkills = async (req, res) => {
   try {
-    const skills = await Skill.find()
-      .populate("mentors", "_id name")
-      .sort({ name: 1 });
+    const skills = await Skill.find().sort({ name: 1 });
 
     res.json({ skills });
   } catch (err) {
